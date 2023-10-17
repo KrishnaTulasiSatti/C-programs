@@ -1,0 +1,33 @@
+#include<stdio.h>
+int main()
+{
+	int d,c,a1,a2,a3, b1,b2,b3;
+	scanf("%d %d\n%d %d %d\n%d %d %d\n",&d,&c,&a1,&a2,&a3,&b1,&b2,&b3);
+	int coupon,cost;
+	cost = a1 + a2 + a3 + d + b1 + b2 + b3 + d;
+	
+	if(a1 + a2 +a3 > 150)
+	{   if(b1+ b2 + b3 > 150)
+      	{
+		coupon = a1 + a2 + a3 + b1 + b2 + b3 +c;
+		
+	    }
+	    else
+	    {
+	   	coupon = a1 + a2 + a3 + b1 + b2 + b3 + c + d;	
+		}
+	    
+		
+	}
+
+	if(coupon<cost)
+	{
+		
+		printf("YES");
+	}
+	else
+	{
+		
+		printf("NO");
+	}
+}
