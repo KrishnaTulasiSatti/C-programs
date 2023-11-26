@@ -1,0 +1,21 @@
+#include<stdio.h>
+int isPowerofTwo(long long n){
+        
+     double res = log2(n);
+     int check = res;
+     if(res == check) return res;
+     else return -2;
+        
+    }
+    int findPosition(int N) {
+        
+        int a = isPowerofTwo(N);
+        return a+1;
+
+    }
+/* if there is only one set bit ina given number it means that the number should be in powers of two */
+int main() {
+int n;
+scanf("%d",&n);
+printf("%d",findPosition(n));
+}
