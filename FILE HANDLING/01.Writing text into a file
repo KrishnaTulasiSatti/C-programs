@@ -3,7 +3,10 @@
 
 int main() {
     FILE *fp;
+//int num = 100;
     char ch[100]="Tulasi";
+    char c = 'a'; //  to write a character we use fputc();
+// fprintf(fp,"%s" "%d",ch,num);
     fp = fopen("Untitled11.c","w");
     if(fp == NULL) {
         printf("ERROR!");
