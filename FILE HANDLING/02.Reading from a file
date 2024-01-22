@@ -1,0 +1,43 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    FILE *fp ;
+    char ch;
+    fp = fopen("Untitled11.c","r");
+    //fgetc --> read a single chaaracter
+    //fgets --> read entire string
+    if(fp == NULL){
+    	printf("Error!");
+    	return 1;
+	}
+	ch = fgetc(fp);  //In the previous example we write "Tulasi" into untitled11.c file
+	printf("%c",ch); // So it will print ---> T on the output screen 
+	
+    //To print complete file
+    // feof returns false if it is not the end of file so we have to write !feof
+    
+     while(!feof(fp)){    
+    	ch = fgetc(fp);
+    	printf("%c",ch); 
+	}
+	
+    //Output --> Tulasi
+    
+   	char str[10];
+	fgets(str,7,fp);   
+	printf("%s",str);
+	//Output --> Tulasi
+	
+	//fgets --> stops reading when it finds a \n 
+	//So to avoid this , we write in while loop
+	
+	while(!feof(fp)){
+	    fgets(str,8,fp);   
+	    printf("%s",str);
+	}
+	
+	fclose(fp);
+	
+    return 0;
+}
