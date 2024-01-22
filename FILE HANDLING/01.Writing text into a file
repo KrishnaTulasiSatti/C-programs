@@ -1,0 +1,16 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    char ch[100]="Tulasi";
+    fp = fopen("Untitled11.c","w");
+    if(fp == NULL) {
+        printf("ERROR!");
+        return 1;
+    }
+    fputs(ch,fp);
+    fclose(fp);
+
+    return 0;
+}
