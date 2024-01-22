@@ -1,0 +1,25 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+#include <stdarg.h>
+int sum(int num,...){
+    va_list list;
+    va_start(list,num);
+    int sum = 0;
+    for(int i = 0 ; i < num ; i++){
+        int n = va_arg(list,int);
+        sum+=n;
+    }
+    va_end(list);
+    return sum;
+}
+int main() {
+    /*  to find sum of 2 numbers we can write function
+    to find sum of 3 numbers in the same program ,again we need to write another function as the previous function can take only two arguments......In order to avoid this,we use variadic functions in C.
+    */
+    int sum1 = sum(2,10,20); // 30
+    int sum2 = sum(3,10,20,30); //60
+    int sum3 = sum(5,10,20,20,10,10); //70
+    printf("%d\n%d\n%d\n",sum1,sum2,sum3);
+
+    return 0;
+}
