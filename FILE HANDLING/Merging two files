@@ -1,0 +1,24 @@
+#include<stdio.h>
+int main(){
+	FILE *f1,*f2,*dest;
+	char ch;
+	f1 = fopen("Tulasi.c","r");
+	f2 = fopen("Study.c","r");
+	dest = fopen("New.c","w");
+	if(f1 == NULL || f2 == NULL || dest == NULL){
+		printf("Error");
+		return 1;
+		
+	}
+	while((ch = fgetc(f1)) != EOF){
+		fputc(ch,dest);
+	}
+		while((ch = fgetc(f2)) != EOF){
+		fputc(ch,dest);
+	}
+	fclose(f1);
+	fclose(f2);
+	fclose(dest);
+	printf("Merged successfully");
+	return 0;
+}
