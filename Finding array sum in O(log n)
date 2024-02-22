@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main(){
+//Finding array sum in O(log n)
+    int arr[5] = {1,2,3,4,5};
+      int sum = 0;
+        int l = 0;
+        int r = n-1;
+        while(l <= r){
+            sum = sum + ((l==r) ? arr[l] : arr[l]+arr[r]);
+            l++;
+            r--;
+        }
+//Another method
+      int sum = 0;
+        int l = 0;
+        int r = n-1;
+        while(l < r){
+            sum += arr[l]+arr[r];
+            l++;
+            r--;
+        }
+        int mid = (l+r)/2;
+        if(n % 2 == 1) sum+= arr[mid]; 
+        printf("%d",sum);
+}
